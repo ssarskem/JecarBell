@@ -6,6 +6,8 @@ import React, { useEffect, useRef } from 'react'
 import profilePic from "../../../public/images/profile/profile-jecarbell-2.png"
 import Image from 'next/image';
 import { useInView, useMotionValue, useSpring } from 'framer-motion';
+import Skills from '@/components/Skills';
+import Experience from '@/components/Experience';
 
 type AnimatedNumbersProps = {
   value: number;
@@ -49,7 +51,7 @@ const About = (props: Props) => {
       </Head>
       <main className='flex w-full flex-col items-center justify-center'>
         <PageLayout className="pt-16">
-          <AnimatedText text='探求心を持って前進せよ！' className='mb-16' />
+          <AnimatedText text='世界を探索しよう！' className='mb-16' />
           <div className='grid w-full grid-cols-8 gap-16'>
             <div className='col-span-3 flex flex-col items-start justify-start'>
               <h2 className='mb-4 text-lg font-bold text-dark/75'>経歴</h2>
@@ -65,9 +67,6 @@ const About = (props: Props) => {
               </p>
               <p className='font-medium'>
                 現在はフルスタックエンジニアとして働いており、web開発の全領域にわたるスキルを活用しています。慎重でありながらも冒険を恐れず、未知の課題を解決することを楽しんでいます。
-              </p>
-              <p className='font-medium'>
-                余暇にはテレビゲームを楽しんだり、映画を観たりします。また、web開発のスキルを磨くための個人プロジェクトにも時々取り組んでいます。また、水泳をして身体を動かすのも好きです。
               </p>
               <p className='font-medium'>
                 技術者として、各分野で新たな知識を獲得し、それを適用する経験を重ねてきました。この経験とスキルが、今後の仕事やプロジェクトにとって価値あるものとなるよう日々努力しています！
@@ -87,11 +86,13 @@ const About = (props: Props) => {
                 <h2 className='font-medium text-xl capitalize text-dark/75'>projects completed</h2>
               </div>
               <div className='flex flex-col items-end justify-center'>
-                <span className='inline-block text-7xl font-bold'><AnimatedNumbers value={30} />+</span>
+                <span className='inline-block text-7xl font-bold'><AnimatedNumbers value={4} />+</span>
                 <h2 className='font-medium text-xl capitalize text-dark/75'>years of experience</h2>
               </div>
             </div>
           </div>
+          <Skills />
+          <Experience />
         </PageLayout>
       </main>
     </>
