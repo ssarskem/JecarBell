@@ -39,9 +39,7 @@ const AnimatedNumbers = ({value}:AnimatedNumbersProps) => {
   )
 }
 
-type Props = {}
-
-const About = (props: Props) => {
+const About = () => {
   return (
     <>
       <Head>
