@@ -8,27 +8,23 @@ const useThemeSwitcher = (): [string, React.Dispatch<React.SetStateAction<string
     const userPref = window.localStorage.getItem("theme");
 
     const handleChange = () => {
-      if(userPref) {
-        let check = userPref === "dark" ? "dark" : "light";
-        setMode(check);
-        if(check==="dark") {
-          document.documentElement.classList.add("dark")
-        } else {
-          document.documentElement.classList.remove("dark")
-        }
-      } else {
-        let check = mediaQuery.matches ? "dark" : "light"
-        if(check==="dark") {
-          document.documentElement.classList.add("dark")
-        } else {
-          document.documentElement.classList.remove("dark")
-        }
-      }
-    }
-    mediaQuery.addEventListener("change", handleChange)
+      let check;
 
-    return () => mediaQuery.removeEventListener("change", handleChange)
-  }, [])
+      if (userPref) {
+        check = userPref === "dark" ? "dark" : "light";
+      } else {
+        check = mediaQuery.matches ? "dark" : "light";
+      }
+
+      setMode(check);
+    }
+
+    handleChange(); // Add this line
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
 
   useEffect(() => {
     if(mode === "dark") {
@@ -38,8 +34,9 @@ const useThemeSwitcher = (): [string, React.Dispatch<React.SetStateAction<string
       window.localStorage.setItem("theme", "light");
       document.documentElement.classList.remove("dark")
     }
-  }, [mode])
-  return [mode, setMode]
+  }, [mode]);
+
+  return [mode, setMode];
 };
 
 export default useThemeSwitcher;
