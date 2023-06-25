@@ -20,7 +20,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body className={`${notojp.variable} font-notojp bg-light w-full min-h-screen`}>
+      <body className={`${notojp.variable} font-notojp bg-light dark:bg-dark w-full min-h-screen`}>
         <NavBar />
         {children}
         <Footer />
