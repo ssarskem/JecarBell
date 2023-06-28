@@ -18,7 +18,7 @@ const Details = ({position, company, companyLink, time, address, work}: DetailsP
     <li 
       ref={ref}
       className='p-8 my-8 first:mt-0 last:mb-0 w-[80%] mx-auto flex flex-col 
-      items-center justify-between bg-green-100 rounded-2xl border'
+      items-center justify-between bg-primary dark:bg-primaryDark text-light dark:text-dark rounded-2xl border'
     >
       <LiIcon reference={ref} />
       <motion.div
@@ -35,9 +35,9 @@ const Details = ({position, company, companyLink, time, address, work}: DetailsP
       >
         <h3 className='capitalize font-bold text-2xl'>
           {position}&nbsp;
-          <a href={`${companyLink}`} target='_blank' className='text-primary capitalize'>@{company}</a>
+          <a href={`${companyLink}`} target='_blank' className='capitalize'>@{company}</a>
         </h3>
-        <span className='capitalize font-medium text-dark/75'>
+        <span className='capitalize font-medium text-light/75 dark:text-dark/75'>
           {time} | {address} </span>
         <p className='font-medium w-full'>{work}</p>
       </motion.div>
@@ -63,7 +63,7 @@ const Experience = (props: Props) => {
           style={{
             scaleY: scrollYProgress,
           }} 
-          className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top' 
+          className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light' 
         />
         <ul className='w-full flex flex-col items-start justify-between ml-4'>
           <Details

@@ -69,6 +69,10 @@ const MovingImg = ({title, img, link}: MovingImgProps) => {
       </h2>
       <FramerImage  
         className="z-10 w-96 h-auto hidden absolute rounded-lg"
+        priority
+        sizes="(max-width: 768px) 100vw,
+          (max-width: 1200px) 50vw,
+          50vw"
         style={{
           x: x,
           y: y,
@@ -93,8 +97,8 @@ const Article = ({img, title, date, link}: ArticleProps) => {
   return (
     <motion.li 
       className="relative w-full p-4 py-6 my-4 rounded-xl 
-      flex items-center justify-between bg-light text-dark 
-      first:mt-0 border border-solid border-dark border-b-4"
+      flex items-center justify-between bg-light dark:bg-dark text-dark dark:text-light 
+      first:mt-0 border border-solid border-dark dark:border-light border-b-4"
       initial={{
         y: 200,
       }}
@@ -111,7 +115,7 @@ const Article = ({img, title, date, link}: ArticleProps) => {
     >
       <MovingImg title={title} img={img} link={link} />
       <span
-        className="text-primary font-semibold pl-4"
+        className="text-primary dark:text-primaryDark font-semibold pl-4"
       >
         {date}
       </span>
@@ -121,14 +125,19 @@ const Article = ({img, title, date, link}: ArticleProps) => {
 
 const FeaturedArticle = ({img, title, minute, summary, link}: FeaturedArticleProps) => {
   return (
-    <li className='relative col-span-1 w-full p-4 bg-light border border-solid border-dark rounded-2xl'>
-      <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark rounded-br-3xl' />
+    <li className='relative col-span-1 w-full p-4 bg-light dark:bg-dark border border-solid border-dark dark:border-light rounded-2xl'>
+      <div className='absolute top-0 -right-3 -z-10 w-[101%] h-[103%] rounded-[2.5rem] bg-dark dark:bg-light rounded-br-3xl' />
       <Link
         href={link}
         target="_blank"
         className='w-full inline-block cursor-pointer overflow-hidden rounded-lg'
       >
-        <FramerImage src={img} alt={title} className="w-full h-auto" 
+        <FramerImage src={img} alt={title} 
+          className="w-full h-auto" 
+          priority
+          sizes="(max-width: 768px) 100vw,
+            (max-width: 1200px) 50vw,
+            50vw"
           whileHover={{
             scale: 1.05,
           }}
@@ -144,7 +153,7 @@ const FeaturedArticle = ({img, title, minute, summary, link}: FeaturedArticlePro
         <h2 className='capitalize text-2xl font-bold my-2 mt-4 hover:underline'>{title}</h2>
       </Link>
       <p className='text-sm mb-2'>{summary}</p>
-      <span className='text-primary font-semibold'>この記事は{minute}分で読めます。</span>
+      <span className='text-primary dark:text-primaryDark font-semibold'>この記事は{minute}分で読めます。</span>
     </li>
   )
 };
@@ -159,7 +168,7 @@ const articles = () => {
         </title>
         <meta name="description" content="any description" />
       </Head>
-      <main className='flex w-full flex-col items-center justify-center overflow-hidden'>
+      <main className='flex w-full flex-col items-center justify-center overflow-hidden text-dark dark:text-light'>
         <PageLayout className="pt-16">
           <AnimatedText text="言葉が世界を変える" className='mb-16' />
           <ul className='grid grid-cols-2 gap-16'>
