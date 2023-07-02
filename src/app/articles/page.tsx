@@ -11,6 +11,7 @@ import { motion, useMotionValue } from 'framer-motion';
 import Article3 from '../../../public/images/articles/create modal component in react using react portals.png'
 import Article4 from '../../../public/images/articles/form validation in reactjs using custom react hook.png'
 import Article5 from '../../../public/images/articles/smooth scrolling in reactjs.png'
+import TransitionEffect from '@/components/TransitionEffect';
 
 type FeaturedArticleProps = {
   img: StaticImageData,
@@ -63,12 +64,12 @@ const MovingImg = ({title, img, link}: MovingImgProps) => {
     >
       <h2
         className="capitalize text-xl font-semibold 
-        hover:underline"
+        hover:underline xs:text-lg"
       >
         {title}
       </h2>
       <FramerImage  
-        className="z-10 w-96 h-auto hidden absolute rounded-lg"
+        className="z-10 w-96 h-auto hidden absolute rounded-lg md:!hidden"
         priority
         sizes="(max-width: 768px) 100vw,
           (max-width: 1200px) 50vw,
@@ -97,8 +98,8 @@ const Article = ({img, title, date, link}: ArticleProps) => {
   return (
     <motion.li 
       className="relative w-full p-4 py-6 my-4 rounded-xl 
-      flex items-center justify-between bg-light dark:bg-dark text-dark dark:text-light 
-      first:mt-0 border border-solid border-dark dark:border-light border-b-4"
+      flex items-center justify-between  bg-light dark:bg-dark text-dark dark:text-light 
+      first:mt-0 border border-solid border-dark dark:border-light border-b-4 sm:flex-col sm:items-start"
       initial={{
         y: 200,
       }}
@@ -115,7 +116,7 @@ const Article = ({img, title, date, link}: ArticleProps) => {
     >
       <MovingImg title={title} img={img} link={link} />
       <span
-        className="text-primary dark:text-primaryDark font-semibold pl-4"
+        className="text-primary dark:text-primaryDark font-semibold pl-4 sm:self-start sm:pl-0 xs:text-sm"
       >
         {date}
       </span>
@@ -168,10 +169,11 @@ const articles = () => {
         </title>
         <meta name="description" content="any description" />
       </Head>
+      <TransitionEffect />
       <main className='flex w-full flex-col items-center justify-center overflow-hidden text-dark dark:text-light'>
         <PageLayout className="pt-16">
-          <AnimatedText text="言葉が世界を変える" className='mb-16' />
-          <ul className='grid grid-cols-2 gap-16'>
+          <AnimatedText text="言葉が世界を変える" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl' />
+          <ul className='grid grid-cols-2 gap-16 md:grid-cols-1 lg:gap-8 md:gap-y-16'>
             <FeaturedArticle 
               img={Article1}
               title="Reactのカスタムページネーションを実装する"
