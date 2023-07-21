@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ポートフォリオサイト"Jecar Bell"
 
-## Getting Started
+https://jecar-bell.vercel.app/
 
-First, run the development server:
+## 概要
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Next.js, react, tailwindcssで作成した、自己紹介用webサイトです。
+- 特長は以下の通り。
+  - framer-motionを利用して各種アニメーションを表現
+  - レスポンシブ対応(スマートフォン、タブレット、PC)
+  - ダークモード対応
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 背景
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 実務ではフロントエンド・バックエンド開発を経験していたが、最新の技術も勉強したい気持ちがあった
+  - 特に現場ではフロントエンドに、現在ではほぼ使われないJQueryが使われていたため
+- ユーザー向けに動作が最適化されたwebの技術を勉強したかった。特にNext.jsによるSSR等。
+- ReactのHooksの動作を勉強したかった
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 未完成のコンテンツ
+- 経歴
+- プロジェクト内容
+- ブログ記事
 
-## Learn More
+## 参考
 
-To learn more about Next.js, take a look at the following resources:
+- https://github.com/codebucks27/Next.js-Developer-Portfolio-Starter-Code
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## その他の開発物
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- HygraphによるGraqhQLデータ取得機能を持つブログサイト
+  - https://github.com/ssarskem/blog-cms
